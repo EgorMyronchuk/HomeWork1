@@ -69,11 +69,14 @@ public class Main {
             for (int i = 0; i < 5; i++) {
                 fiveRandNumbers[i] = randomNumber100();
             }
-            exit = true;
+
             for (int i = 0; i < fiveRandNumbers.length; i++) {
                 for (int j = i + 1; j < fiveRandNumbers.length; j++) {
                     if (fiveRandNumbers[i] == fiveRandNumbers[j])
                       exit = false;
+                    else if ((i == 4) && (j == 4) && (exit != false) ){
+                        exit = true ;
+                    }
                 }
             }
 
