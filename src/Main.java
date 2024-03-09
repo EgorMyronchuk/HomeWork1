@@ -11,9 +11,18 @@ public class Main {
         long[] end = new long[3];
         end = ThreeNumber ();
         System.out.println("Yours numbers:");
-        for (int i = 0; i < 3; i++) {
-            System.out.printf("%d " , end [i]);
+
+        for (int j = 0; j < 100; j++) {
+            end = ThreeNumber ();
+            for (int i = 0; i < 3; i++){
+                System.out.printf("%d " , end [i]);
+
+            }
+            System.out.println();
+
         }
+
+
     }
 
     public static long[] ThreeNumber (){
@@ -64,7 +73,7 @@ public class Main {
     public static long[] TrigerPoint (){
         boolean exit = true;
         long[] fiveRandNumbers = new long[5];
-        while (exit ) {
+        do {
 
             for (int i = 0; i < 5; i++) {
                 fiveRandNumbers[i] = randomNumber100();
@@ -73,12 +82,12 @@ public class Main {
             for (int i = 0; i < fiveRandNumbers.length; i++) {
                 for (int j = i + 1; j < fiveRandNumbers.length; j++) {
                     if (fiveRandNumbers[i] == fiveRandNumbers[j])
-                      exit = true;
+                        exit = true;
 
                 }
             }
-
         }
+        while (exit);
         return fiveRandNumbers;
     }
 
