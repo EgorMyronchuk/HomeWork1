@@ -9,32 +9,24 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine();
         long[] end = new long[3];
-        end = ThreeNumber ();
-        System.out.println("Yours numbers:");
-
-        for (int j = 0; j < 100; j++) {
-            end = ThreeNumber ();
-            for (int i = 0; i < 3; i++){
-                System.out.printf("%d " , end [i]);
-
-            }
-            System.out.println();
-
-        }
-
-
-    }
-
-    public static long[] ThreeNumber (){
-        long[] myArray = new long[3];
         long[] persent5 = new long[5];
         persent5 = TrigerPoint ();
+        long Random100 = randomNumber100();
+        end = ThreeNumber (persent5);
+        System.out.println("Yours numbers:");
+        for (int i = 0; i < 3; i++) {
+            System.out.printf("%d " , end [i]);
+        }
+    }
+
+    public static long[] ThreeNumber (long []persent5){
+        long[] myArray = new long[3];
         long Random100 = randomNumber100();
         for (int i = 0; i < 5; i++) {
              if(Random100 == persent5[i]){
                  long temp = randomNumber();
                  for (int j = 0; j < 3; j++) {
-                     myArray[i] = temp;
+                     myArray[j] = temp;
                  }
                  return myArray;
              }
